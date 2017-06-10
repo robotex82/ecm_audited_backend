@@ -1,0 +1,7 @@
+en:
+  itsf:
+    backend:
+      resource:
+        base:
+          resource_pages_navigation:
+            audit_log: Audit Log

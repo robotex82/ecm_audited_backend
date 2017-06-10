@@ -1,0 +1,4 @@
+%h2= t('.audited_models')
+%ul
+  - Ecm::Audited::Configuration.audited_models.call.each do |model, options|
+    %li= model.model_name.human

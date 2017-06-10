@@ -1,0 +1,21 @@
+#resource-pages-naviatio.bottom-margin-1
+  = render 'resource_pages_navigation', resource: @resource
+
+%h1= t('.heading', resource: @resource.try_all(*Itsf::Backend::Configuration.resource_title_methods))
+
+.panel.panel-default
+  = render_collection @resource.audits.reorder(version: :desc), Audited::Audit, as: :bootstrap_table do |table|
+    = table.association :auditable
+    = table.association :associated
+    = table.association :user
+    = table.column :user_type
+    = table.column :username
+    = table.column :action
+    = table.column :audited_changes
+    = table.column :version
+    = table.column :comment
+    = table.column :remote_address
+    = table.column :request_uuid
+    = table.column :created_at
+    = table.column :actions do |resource|
+      = button_to t('.revert'), url_for(action: 'revert', version: resource.version), class: 'btn btn-xs btn-warning'

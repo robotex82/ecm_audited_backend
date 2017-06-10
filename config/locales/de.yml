@@ -1,0 +1,12 @@
+de:
+  classes:
+    ecm/audited/backend/engine: "Audit Logs (Beta)"
+  itsf:
+    backend:
+      resource:
+        base:
+          audit_log:
+            heading: "Audit Log für %{resource}"
+            revert: Wiederherstellen
+          resource_pages_navigation:
+            audit_log: Audit Log
